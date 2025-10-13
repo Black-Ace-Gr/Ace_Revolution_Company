@@ -1,1 +1,1 @@
-web: gunicorn ace_revolution_company.wsgi
+web: gunicorn ace_revolution_company.wsgi:application
