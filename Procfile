@@ -1,0 +1,1 @@
+web: gunicorn ace_revolution_company.wsgi
