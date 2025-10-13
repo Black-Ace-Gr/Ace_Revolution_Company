@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-e7&+@x&)r9$_u9-x1j!!pdx9^o+p6hhgt@@k%cue)v*sclgtyt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
-ROOT_URLCONF = 'ace_revolution_company.urls'
+ROOT_URLCONF = 'ace_revolution.urls'
 
 TEMPLATES = [
     {
@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ace_revolution_company.wsgi.application'
+WSGI_APPLICATION = 'ace_revolution.wsgi.application'
 
 import dj_database_url
 import os
