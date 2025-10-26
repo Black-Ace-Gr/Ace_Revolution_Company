@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
-ROOT_URLCONF = 'ace_revolution.urls'
+ROOT_URLCONF = 'ace_revolution_company.urls'
 
 TEMPLATES = [
     {
@@ -72,8 +72,13 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ace_revolution.wsgi.application'
-
+WSGI_APPLICATION = 'ace_revolution_company.wsgi.application'
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 import dj_database_url
 import os
 
