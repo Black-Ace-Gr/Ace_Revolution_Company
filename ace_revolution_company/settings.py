@@ -10,7 +10,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    '.up.railway.com',
+    'web-production-8c86b.up.railway.com',
 ]
 
 INSTALLED_APPS = [
