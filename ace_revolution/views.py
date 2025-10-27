@@ -38,4 +38,4 @@ def contact(request):
 
         return render(request, "ace_revolution/email_sent.html", {"name": name})
 
-    return render(request, "ace_revolution/email_sent.html")
+    return render(request, "ace_revolution/home.html")
