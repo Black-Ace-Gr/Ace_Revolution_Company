@@ -27,6 +27,6 @@ def contact(request):
         )
 
         messages.success(request, "Message received! I’ll get back to you soon.")
-        return redirect("contact")
+        return redirect("home")
 
-    return render(request, "ace_revolution_company/contact.html")
+    return render(request, "ace_revolution_company/home.html")
