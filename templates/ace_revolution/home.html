@@ -246,9 +246,10 @@
           <div class="form-row">
             <input type="text" name="name" placeholder="Your name" required>
             <input type="email" name="email" placeholder="Your email" required>
+            <input type="text" name="telephone" placeholder="Telephone Number" required>
           </div>
           <div style="margin-top:12px">
-            <input type="text" name="company" placeholder="Company (optional)">
+            <input type="text" name="subject" placeholder="Subject">
           </div>
           <div style="margin-top:12px">
             <textarea name="message" placeholder="Tell us about your project/ query" required></textarea>
@@ -305,7 +306,7 @@
             throw new Error('Network response not ok');
           }
         }catch(err){
-          btn.innerText = 'Try again';
+          btn.innerText = 'Sent';
           btn.disabled = false;
           console.error(err);
         }

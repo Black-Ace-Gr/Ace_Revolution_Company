@@ -13,37 +13,20 @@ def home(request):
 def contact(request):
     if request.method == "POST":
         name = request.POST.get("name")
-        company = request.POST.get("company", "")
         email = request.POST.get("email")
+        telephone = request.POST.get("telephone")
+        subject = request.POST.get("subject")
         message = request.POST.get("message")
 
-        # Save to database
         ContactMessage.objects.create(
-            name=name, company=company, email=email, message=message
+            name=name,
+            email=email,
+            telephone = telephone,
+            subject=subject,
+            message=message
         )
 
-        # Send email notification
-        subject = f"New Contact Message from {name}"
-        body = (
-            f"Name: {name}\n"
-            f"Company: {company or 'N/A'}\n"
-            f"Email: {email}\n\n"
-            f"Message:\n{message}"
-        )
+        messages.success(request, "Message received! I’ll get back to you soon.")
+        return redirect("contact")
 
-        try:
-            send_mail(
-                subject,
-                body,
-                settings.DEFAULT_FROM_EMAIL,
-                ["gregorydavid373@gmail.com"],  # Your email
-                fail_silently=False,
-            )
-            messages.success(request, "Message sent successfully ✅")
-        except Exception as e:
-            print("Email send error:", e)
-            messages.error(request, "Message saved, but email failed to send ❌")
-
-        return redirect("contact")  # your contact page name
-
-    return render(request, "contact.html")
+    return render(request, "ace_revolution_company/contact.html")
