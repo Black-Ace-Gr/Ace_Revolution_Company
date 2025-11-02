@@ -29,4 +29,4 @@ def contact(request):
         messages.success(request, "Message received! I’ll get back to you soon.")
         return redirect("home")
 
-    return render(request, "ace_revolution_company/home.html")
+    return render(request, "ace_revolution/home.html")
